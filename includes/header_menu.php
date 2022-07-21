@@ -78,7 +78,7 @@
                 </div>
                 <div class="form-check">
                     <input type="checkbox" class="form-check-input">
-                    <label for="checkbox" class="form-check-label">Check me out</label>
+                    <label for="checkbox" class="form-check-label">Agree to terms and condition.</label>
                 </div>
                 <button type="submit" class="btn btn-secondary btn-block" name="Submit">Login</button>
               </form>
