@@ -68,11 +68,16 @@ session_start();
   </div>
   <div class="container mt-3 d-flex justify-content-center card pb-3 col-md-6">
 
-    <form class="col-md-12" action="https://formspree.io/EnterYourEmail" method="POST" name="_next">
+    <form class="col-md-12" action="feedback.php" method="POST" name="_next">
       <h3 class="text-warning pt-3 title mx-auto">Contact Form</h3>
       <div class="form-group">
+        <label for="exampleFormControlInput1">Name</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Your Name"
+          name="name1">
+      </div>
+      <div class="form-group">
         <label for="exampleFormControlInput1">Email address</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter Your Email"
+        <input type="email" class="form-control" id="exampleFormControlInput2" placeholder="Enter Your Email"
           name="email">
       </div>
 
@@ -81,7 +86,7 @@ session_start();
         <textarea class="form-control" id="exampleFormControlTextarea1" name="message" rows="5"></textarea>
       </div>
       <input type="hidden" name="_next" value="http://localhost/foody/about.php" />
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-warning" data-target="#exampleModalCenter">Submit</button>
     </form>
   </div>
 

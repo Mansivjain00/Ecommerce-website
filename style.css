@@ -59,3 +59,10 @@ h6 {
     max-height:200px;
 }
 
+.foot{
+    background-color: yellow;
+}
+
+#one, #two, #three{
+    border: 1px solid black;
+}

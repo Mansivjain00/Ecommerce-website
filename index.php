@@ -75,17 +75,87 @@ include 'includes/check-if-added.php';
         </div>
     </div>
 
+    <?php
+    
+        require ("includes/common.php");
+        $sql = "SELECT * from `feedback`";
+        $result = mysqli_query($con,$sql);
+        
+        $index=0;
+        while($row = mysqli_fetch_assoc($result)){
+            $array[$index]=$row;
+            $index++;
+        }
+
+        // Find the number of records returned
+        $num = mysqli_num_rows($result);
+
+        // Display row returned by the sql query
+        if($num>0){
+            echo "<h3 class='text-center my-5'>Customer reviews</h3>";
+
+            $random1=random_int(0,$num-1);
+            $random2=random_int(0,$num-1); 
+            $random3=random_int(0,$num-1); 
+
+            $row1 = $array[$random1];
+            $row2 = $array[$random2];
+            $row3 = $array[$random3];
+
+            $name1 = $row1['name'];
+            $message1 = $row1['message'];
+            $date1 = $row1['date_time'];
+            $name2 = $row2['name'];
+            $message2 = $row2['message'];
+            $date2 = $row2['date_time'];
+            $name3 = $row3['name'];
+            $message3 = $row3['message'];
+            $date3 = $row3['date_time'];
+
+            echo "<div class='card-group my-3'>
+            <div class='card mx-3' id='one'>
+              <div class='card-body'>
+                <h5 class='card-title'>$name1</h5>
+                <p class='card-text'>$message1</p>
+              </div>
+              <div class='card-footer'>
+                <small class='text-muted'>$date1</small>
+              </div>
+            </div>
+            <div class='card mx-3' id='two'>
+              <div class='card-body '>
+                <h5 class='card-title'>$name2</h5>
+                <p class='card-text'>$message2</p>
+              </div>
+              <div class='card-footer'>
+                <small class='text-muted'>$date2</small>
+              </div>
+            </div>
+            <div class='card mx-3' id='three'>
+              <div class='card-body'>
+                <h5 class='card-title'>$name3</h5>
+                <p class='card-text'>$message3</p>
+              </div>
+              <div class='card-footer'>
+                <small class='text-muted'>$date3</small>
+              </div>
+            </div>
+          </div>";
+            
+        }
+
+    ?>
+
+
     <!--menu highlights end-->
     <!--footer -->
     <?php include 'includes/footer.php'?>
     <!--footer end-->
 
 
-
-
 </body>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></scrip>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></cript>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <script>
 $(document).ready(function(){

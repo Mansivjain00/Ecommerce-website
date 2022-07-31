@@ -22,6 +22,4 @@ if($num==0){
     header('location:products.php');
 }
 
-
-
 ?>
